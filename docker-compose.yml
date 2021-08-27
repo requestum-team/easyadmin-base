@@ -1,0 +1,20 @@
+version: '3.4'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: db
+    volumes:
+      - ./.data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    ports:
+      - 81:8080
+    depends_on:
+      - db

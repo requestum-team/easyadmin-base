@@ -1,0 +1,9 @@
+{% extends '@EasyAdmin/layout.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+
+{% block main %}
+    <h3>Import users</h3>
+    {{ form(form) }}
+
+{% endblock %}
